@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <!-- 数据库驱动jar路径 -->
+    <classPathEntry
+            location="C:\Users\admin\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
+
+    <context id="mysql">
+
+        <!-- 1：注释构建;type-可通过实现CommentGenerator接口构建自定义的注释构建类 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释；true:是；false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 2：数据库连接信息 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/baldwin_blog"
+                        userId="root" password="wy1240594179">
+        </jdbcConnection>
+
+        <!--是否启用java.math.BigDecimal-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 3：生成实体类地址 -->
+        <javaModelGenerator targetPackage="baldwinblog.bean" targetProject="E:\WorkSpaces\IDEAworkspace\BaldwinBlog\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 4.生成map.xml地址 -->
+        <sqlMapGenerator targetPackage="baldwinblog.mapper.xml" targetProject="E:\WorkSpaces\IDEAworkspace\BaldwinBlog\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 5.生成DAO地址 -->
+        <javaClientGenerator targetPackage="baldwinblog.mapper" type="XMLMAPPER" targetProject="E:\WorkSpaces\IDEAworkspace\BaldwinBlog\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!-- 配置表信息 -->
+        <table tableName="all_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <!--<property name="useActualColumnNames" value="true"/>-->
+        </table>
+    </context>
+</generatorConfiguration>

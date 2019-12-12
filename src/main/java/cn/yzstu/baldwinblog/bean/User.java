@@ -1,4 +1,4 @@
-package baldwinblog.bean;
+package cn.yzstu.baldwinblog.bean;
 
 public class User {
     private Integer userId;
@@ -79,5 +79,19 @@ public class User {
 
     public void setUserOhter(String userOhter) {
         this.userOhter = userOhter == null ? null : userOhter.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userNick='" + userNick + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userDetail='" + userDetail + '\'' +
+                ", userPhone='" + userPhone + '\'' +
+                ", userOhter='" + userOhter + '\'' +
+                '}';
     }
 }

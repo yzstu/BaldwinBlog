@@ -1,8 +1,8 @@
-package baldwinblog.service.impl;
+package cn.yzstu.baldwinblog.service.impl;
 
-import baldwinblog.bean.User;
-import baldwinblog.mapper.UserMapper;
-import baldwinblog.service.UserService;
+import cn.yzstu.baldwinblog.bean.User;
+import cn.yzstu.baldwinblog.mapper.UserMapper;
+import cn.yzstu.baldwinblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getbyId(int id) {
-        return userMapper.selectByPrimaryKey(id);
+        return userMapper.selectById(Integer.valueOf(id));
     }
 }

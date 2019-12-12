@@ -1,6 +1,6 @@
-package baldwinblog.service;
+package cn.yzstu.baldwinblog.service;
 
-import baldwinblog.bean.User;
+import cn.yzstu.baldwinblog.bean.User;
 
 /**
  * @描述

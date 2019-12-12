@@ -1,14 +1,10 @@
-package baldwinblog.controller;
+package cn.yzstu.baldwinblog.controller;
 
-import baldwinblog.bean.User;
-import baldwinblog.service.UserService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
+import cn.yzstu.baldwinblog.bean.User;
+import cn.yzstu.baldwinblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.security.PublicKey;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -22,7 +18,7 @@ import java.security.PublicKey;
  */
 @RestController
 @RequestMapping(value = "/user")
-public class LoginController {
+public class UserController {
 
     @Autowired
     private UserService userService;

@@ -1,4 +1,4 @@
-package baldwinblog;
+package cn.yzstu.baldwinblog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

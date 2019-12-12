@@ -2,6 +2,8 @@ package cn.yzstu.baldwinblog.controller;
 
 import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.baldwinblog.service.UserService;
+import cn.yzstu.common.cinfiguration.RedisConfig;
+import cn.yzstu.common.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +30,18 @@ public class UserController {
         String str;
         User user = userService.getbyId(1);
         str = user.toString();
-        return str;
+        RedisUtil redisUtil = new RedisUtil();
+
+
+        String key = user.getUserName()+user.getUserId()+"loginNum";
+
+        if (redisUtil.hasKey(key)) {
+            redisUtil.incr(key, 1);
+        } else {
+            redisUtil.set(key, 1);
+        }
+
+
+        return user.getUserName()+"登陆了"+redisUtil.get(key)+"次";
     }
 }

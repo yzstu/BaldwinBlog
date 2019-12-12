@@ -69,7 +69,7 @@
                     <a name="remark-1"></a>
                     <img src="https://thirdqq.qlogo.cn/qqapp/101465933/7627F745B95BFAC18C6C481FE72B4EB1/100" />
                     <div class="info">
-                        <span class="username">燕十三</span>
+                        <span class="username">Baldwin</span>
                     </div>
                     <div class="comment-content">
                         剑气纵横三万里
@@ -187,7 +187,7 @@
                         <a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
                     </div>
                     <p class="mt05">
-                        Copyright &copy; 2018-2018 燕十三 All Rights Reserved V.3.1.3 蜀ICP备18008600号
+                        Copyright &copy; 2018-2019 www.yzstu.cn All Rights Reserved V.3.1.3 蜀ICP备18008600号
                     </p>
                 </div>
             </div>

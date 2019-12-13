@@ -1,27 +1,38 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 2019/12/13
+  Time: 18:22
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <title>文章阅读</title>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="layui/css/layui.css" />
-    <link rel="stylesheet" href="css/master.css" />
-    <link rel="stylesheet" href="css/gloable.css" />
-    <link rel="stylesheet" href="css/nprogress.css" />
-    <link rel="stylesheet" href="css/blog.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/main/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/main/layui/css/layui.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/main/css/master.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/main/css/gloable.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/main/css/nprogress.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/main/css/blog.css"/>
 </head>
 <body>
-    <div class="header">
-    </div>
-    <header class="gird-header">
-        <div class="header-fixed">
-            <div class="header-inner">
-                <a href="javascript:void(0)" class="header-logo" id="logo">Mr.Yss</a>
-                <nav class="nav" id="nav">
-                    <ul>
+<div class="header">
+</div>
+<header class="gird-header">
+    <div class="header-fixed">
+        <div class="header-inner">
+            <a href="javascript:void(0)" class="header-logo" id="logo">Mr.Yss</a>
+            <nav class="nav" id="nav">
+                <ul>
                         <li><a href="index.html">首页</a></li>
                         <li><a href="article.html">博客</a></li>
                         <li><a href="message.html">留言</a></li>

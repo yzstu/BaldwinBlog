@@ -1,4 +1,4 @@
-package cn.yzstu.common.cinfiguration;
+package cn.yzstu.common.utils.redis;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -94,5 +94,18 @@ public class RedisConfig extends CachingConfigurerSupport {
         redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
     }
 
-
+    /**
+     * 注入封装RedisTemplate
+     * @Title: redisUtil
+     * @return RedisUtil
+     * @autor Baldwin
+     * @date 2017年12月21日
+     * @throws
+     */
+    @Bean
+    public RedisUtil redisUtil(RedisTemplate<String, Object> redisTemplate) {
+        RedisUtil redisUtil = new RedisUtil();
+        redisUtil.setRedisTemplate(redisTemplate);
+        return redisUtil;
+    }
 }

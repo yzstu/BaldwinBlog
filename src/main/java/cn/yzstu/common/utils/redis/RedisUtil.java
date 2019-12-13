@@ -1,4 +1,4 @@
-package cn.yzstu.common.utils;
+package cn.yzstu.common.utils.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -25,17 +25,20 @@ import java.util.concurrent.TimeUnit;
  * \* Description:
  * \
  */
-
-@Component
 public class RedisUtil {
+
     /**
      * redis 工具类
      *
-     * @author liuxiaotian
+     * @author Baldwin
      */
 
+    private RedisTemplate<String, Object> redisTemplate;
+
     @Autowired
-    protected RedisTemplate<String, Object> redisTemplate;
+    public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
 
     /**
      * 指定缓存失效时间

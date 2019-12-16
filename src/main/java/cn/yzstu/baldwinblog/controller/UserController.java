@@ -43,7 +43,7 @@ public class UserController {
             redisUtil.set(key,1,20);
         }
 
-        return "index";
+        return "login/index";
         //return user.getUserName()+"登陆了"+redisUtil.get(key)+"次";
     }
 }

@@ -1,5 +1,7 @@
 package cn.yzstu.baldwinblog.bean;
 
+import java.util.Map;
+
 public class User {
     private Integer userId;
 
@@ -16,6 +18,17 @@ public class User {
     private String userPhone;
 
     private String userOhter;
+
+
+    public User(Map<String, String[]> paramMap) {
+        this.userNick = paramMap.containsKey("nickName") ? paramMap.get("nickName")[0].trim() : "null";
+        ;
+        this.userPassword = paramMap.containsKey("password") ? paramMap.get("password")[0].trim() : "null";
+        this.userName = paramMap.containsKey("name") ? paramMap.get("name")[0].trim() : "null";
+        this.userEmail = paramMap.containsKey("email") ? paramMap.get("email")[0].trim() : "null";
+        this.userDetail = paramMap.containsKey("detail") ? paramMap.get("detail")[0].trim() : "null";
+        this.userPhone = paramMap.containsKey("phone") ? paramMap.get("phone")[0].trim() : "null";
+    }
 
     public Integer getUserId() {
         return userId;

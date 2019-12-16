@@ -3,8 +3,11 @@ package cn.yzstu.baldwinblog.service.impl;
 import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.baldwinblog.mapper.UserMapper;
 import cn.yzstu.baldwinblog.service.UserService;
+import cn.yzstu.common.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -23,7 +26,27 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User getbyId(int id) {
-        return userMapper.selectById(Integer.valueOf(id));
+    public ArrayList getList(Criteria criteria) {
+        return userMapper.getList(criteria);
+    }
+
+    @Override
+    public User getById(Integer id) {
+        return userMapper.selectById(id);
+    }
+
+    @Override
+    public int insert(User obj) {
+        return userMapper.insert(obj);
+    }
+
+    @Override
+    public int updateById(User obj) {
+        return userMapper.updateById(obj);
+    }
+
+    @Override
+    public int deleteById(Integer id) {
+        return userMapper.deleteById(id);
     }
 }

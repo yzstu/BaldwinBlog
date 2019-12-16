@@ -24,20 +24,14 @@
                 <div class="card fat">
                     <div class="card-body">
                         <h4 class="card-title">Register</h4>
-                        <form method="POST" class="my-login-validation" novalidate="">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input id="name" type="text" class="form-control" name="name" required autofocus>
-                                <div class="invalid-feedback">
-                                    What's your name?
-                                </div>
-                            </div>
+                        <form method="POST" class="my-login-validation" novalidate="" action="/user/regist.action">
 
                             <div class="form-group">
-                                <label for="email">E-Mail Address</label>
-                                <input id="email" type="email" class="form-control" name="email" required>
+                                <label for="nickName">Name</label>
+                                <input id="nickName" type="text" class="form-control" name="nickName" required
+                                       autofocus>
                                 <div class="invalid-feedback">
-                                    Your email is invalid
+                                    What's your name?
                                 </div>
                             </div>
 
@@ -47,6 +41,40 @@
                                        data-eye>
                                 <div class="invalid-feedback">
                                     Password is required
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input id="name" type="text" class="form-control" name="name" required autofocus>
+                                <div class="invalid-feedback">
+                                    What's your nickname?
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-Mail Address</label>
+                                <input id="email" type="text" class="form-control" name="email" required>
+                                <div class="invalid-feedback">
+                                    Your email is invalid
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input id="phone" type="text" class="form-control" name="phone" required
+                                       data-eye>
+                                <div class="invalid-feedback">
+                                    What's your nickname?
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="detail">Detail</label>
+                                <input id="detail" type="text" class="form-control" name="detail" required
+                                       data-eye>
+                                <div class="invalid-feedback">
+                                    Introduce yourself
                                 </div>
                             </div>
 

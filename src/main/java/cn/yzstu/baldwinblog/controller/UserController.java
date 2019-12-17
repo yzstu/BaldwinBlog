@@ -10,12 +10,10 @@ import cn.yzstu.common.utils.redis.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.SendFailedException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
@@ -80,7 +78,7 @@ public class UserController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "emailVerify.action")
+    @RequestMapping(value = "/emailVerify.action")
     public ModelAndView sendMail(HttpServletRequest request) {
 
         ModelAndView mv = new ModelAndView();

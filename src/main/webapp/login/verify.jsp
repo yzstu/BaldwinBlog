@@ -31,11 +31,20 @@
                 <div class="card fat">
                     <div class="card-body">
                         <h4 class="card-title">Register</h4>
-                        <form method="POST" class="my-login-validation" novalidate="" action="/user/regist.action">
+                        <form method="POST" class="my-login-validation" novalidate="" action="/user/emailVerify.action">
+
+                            <input type="hidden" id="nickName" name="nickName"
+                                   value="<%=request.getParameter("nickName")%>">
+                            <input type="hidden" id="password" name="password"
+                                   value="<%=request.getParameter("password")%>">
+                            <input type="hidden" id="name" name="name" value="<%=request.getParameter("name")%>">
+                            <input type="hidden" id="email" name="email" value="<%=request.getParameter("email")%>">
+                            <input type="hidden" id="phone" name="phone" value="<%=request.getParameter("phone")%>">
+                            <input type="hidden" id="detail" name="detail" value="<%=request.getParameter("detail")%>">
 
                             <div class="form-group">
                                 <label for="emailVerify">Email Verify Code</label>
-                                <input id="emailVerify" type="emailVerify" class="form-control" name="emailVerify"
+                                <input id="emailVerify" type="text" class="form-control" name="emailVerify"
                                        required
                                        data-eye>
                                 <div class="invalid-feedback">

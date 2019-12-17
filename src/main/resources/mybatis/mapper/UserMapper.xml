@@ -27,16 +27,16 @@
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
 
-  <insert id="insertSelective" parameterType="cn.yzstu.baldwinblog.bean.User" >
+  <insert id="insert" parameterType="cn.yzstu.baldwinblog.bean.User">
     insert into all_user
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
         user_id,
       </if>
-      <if test="userNick != null" >
+      <if test="userNick != null">
         user_nick,
       </if>
-      <if test="userPassword != null" >
+      <if test="userPassword != null">
         user_password,
       </if>
       <if test="userName != null" >

@@ -11,4 +11,5 @@ package cn.yzstu.common;
  * \
  */
 public class Criteria {
+
 }

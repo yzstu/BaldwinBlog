@@ -48,7 +48,7 @@
                                        required
                                        data-eye>
                                 <div class="invalid-feedback">
-                                    Password is required
+                                    <c:if test="<%=!request.getParameter("msg").equals("nothing")%>"><%=request.getParameter("msg")%>></c:if>
                                 </div>
                             </div>
 
@@ -56,6 +56,10 @@
                                 <button type="submit" class="btn btn-primary btn-block">
                                     Register
                                 </button>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <c:if test="${requestScope.msg != null}"><%=request.getAttribute("msg")%>
+                                </c:if>
                             </div>
                             <div class="mt-4 text-center">
                                 Already have an account? <a href="<%=basePath%>login/index.jsp">Login</a>

@@ -37,8 +37,21 @@ public class UserController {
     RedisUtil redisUtil;
 
     @RequestMapping(value = "/login.action")
-    String userLogin() {
-        return "login/index";
+    ModelAndView userLogin(HttpServletRequest request) {
+
+        ModelAndView mv = new ModelAndView();
+
+        Map<String, String[]> paramMap = RequestUtil.getRequestParamMap(request);
+        String email = paramMap.containsKey("email") ? paramMap.get("email")[0] : "nothing";
+
+        if (email.equals("nothing")) {
+            request.setAttribute("msg", "邮箱不存在，请检查后重新输入");
+            mv.setViewName("forward:/login/index.jsp");
+            return mv;
+        }
+
+
+        return mv;
     }
 
     /**
@@ -70,6 +83,7 @@ public class UserController {
         redisUtil.set(userEmail, emailVerifyCode, 180);
 
         //请求转发到验证界面
+        request.setAttribute("msg", null);
         mv.setViewName("forward:/login/verify.jsp");
         return mv;
     }
@@ -103,6 +117,7 @@ public class UserController {
         User user = new User(paramMap);
         int target = userService.insert(user);
 
+        request.setAttribute("msg", null);
         mv.setViewName("forward:/login/index.jsp");
 
         return mv;

@@ -89,11 +89,17 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="invalid-feedback">
+                                <c:if test="${msg != null}"><%=request.getParameter("msg")%>></c:if>
+                            </div>
                             <div class="form-group m-0">
                                 <button type="submit" class="btn btn-primary btn-block">
                                     Register
                                 </button>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <c:if test="${requestScope.msg != null}"><%=request.getAttribute("msg")%>
+                                </c:if>
                             </div>
                             <div class="mt-4 text-center">
                                 Already have an account? <a href="<%=basePath%>login/index.jsp">Login</a>

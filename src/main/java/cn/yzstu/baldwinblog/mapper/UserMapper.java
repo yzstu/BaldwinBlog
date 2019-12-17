@@ -2,7 +2,6 @@ package cn.yzstu.baldwinblog.mapper;
 
 import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.common.Criteria;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.ArrayList;
 

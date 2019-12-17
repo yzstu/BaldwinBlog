@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 	String path = request.getContextPath();
@@ -30,9 +31,7 @@
 								<label for="email">E-Mail Address</label>
 								<input id="email" type="email" class="form-control" name="email" value="" required
 									   autofocus>
-								<div class="invalid-feedback">
-									Email is invalid
-								</div>
+
 							</div>
 
 							<div class="form-group">
@@ -59,6 +58,10 @@
 								<button type="submit" class="btn btn-primary btn-block">
 									Login
 								</button>
+							</div>
+							<div class="mt-4 text-center">
+								<c:if test="${requestScope.msg != null}"><%=request.getAttribute("msg")%>
+								</c:if>
 							</div>
 							<div class="mt-4 text-center">
 								Don't have an account? <a href="<%=basePath%>login/register.jsp">Create One</a>

@@ -1,113 +1,162 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.yzstu.baldwinblog.mapper.UserMapper" >
-  <resultMap id="BaseResultMap" type="cn.yzstu.baldwinblog.bean.User" >
-    <id column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="user_nick" property="userNick" jdbcType="CHAR" />
-    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
-    <result column="user_name" property="userName" jdbcType="VARCHAR" />
-    <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
-    <result column="user_detail" property="userDetail" jdbcType="VARCHAR" />
-    <result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
-    <result column="user_ohter" property="userOhter" jdbcType="VARCHAR" />
+  <resultMap id="BaseResultMap" type="cn.yzstu.baldwinblog.bean.User">
+    <id column="user_id" property="userId" jdbcType="BIGINT"/>
+    <result column="user_ip" property="userIp" jdbcType="VARCHAR"/>
+    <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+    <result column="user_password" property="userPassword" jdbcType="VARCHAR"/>
+    <result column="user_email" property="userEmail" jdbcType="VARCHAR"/>
+    <result column="user_profile_photo" property="userProfilePhoto" jdbcType="VARCHAR"/>
+    <result column="user_registration_time" property="userRegistrationTime" jdbcType="TIMESTAMP"/>
+    <result column="user_birthday" property="userBirthday" jdbcType="DATE"/>
+    <result column="user_age" property="userAge" jdbcType="TINYINT"/>
+    <result column="user_telephone_number" property="userTelephoneNumber" jdbcType="INTEGER"/>
+    <result column="user_nickname" property="userNickname" jdbcType="VARCHAR"/>
+    <result column="user_role" property="userRole" jdbcType="TINYINT"/>
+    <result column="user_detail" property="userDetail" jdbcType="VARCHAR"/>
   </resultMap>
-  <sql id="Base_Column_List" >
-    user_id, user_nick, user_password, user_name, user_email, user_detail, user_phone, 
-    user_ohter
+  <sql id="Base_Column_List">
+    user_id, user_ip, user_name, user_password, user_email, user_profile_photo, user_registration_time, 
+    user_birthday, user_age, user_telephone_number, user_nickname,user_role,user_detail
   </sql>
-  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from all_user
-    where user_id = #{userId,jdbcType=INTEGER}
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List"/>
+    from yz_users
+    where user_id = #{userId,jdbcType=BIGINT}
   </select>
-
-  <delete id="deleteById" parameterType="java.lang.Integer" >
-    delete from all_user
-    where user_id = #{userId,jdbcType=INTEGER}
+  <delete id="deleteById" parameterType="java.lang.Long">
+    delete from yz_users
+    where user_id = #{userId,jdbcType=BIGINT}
   </delete>
 
   <insert id="insert" parameterType="cn.yzstu.baldwinblog.bean.User">
-    insert into all_user
+    insert into yz_users
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
         user_id,
       </if>
-      <if test="userNick != null">
-        user_nick,
+      <if test="userIp != null">
+        user_ip,
+      </if>
+      <if test="userName != null">
+        user_name,
       </if>
       <if test="userPassword != null">
         user_password,
       </if>
-      <if test="userName != null" >
-        user_name,
-      </if>
-      <if test="userEmail != null" >
+      <if test="userEmail != null">
         user_email,
       </if>
-      <if test="userDetail != null" >
+      <if test="userProfilePhoto != null">
+        user_profile_photo,
+      </if>
+      <if test="userRegistrationTime != null">
+        user_registration_time,
+      </if>
+      <if test="userBirthday != null">
+        user_birthday,
+      </if>
+      <if test="userAge != null">
+        user_age,
+      </if>
+      <if test="userTelephoneNumber != null">
+        user_telephone_number,
+      </if>
+      <if test="userNickname != null">
+        user_nickname,
+      </if>
+      <if test="userRole != null">
+        user_role,
+      </if>
+      <if test="userDetail != null">
         user_detail,
       </if>
-      <if test="userPhone != null" >
-        user_phone,
-      </if>
-      <if test="userOhter != null" >
-        user_ohter,
-      </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userId != null" >
-        #{userId,jdbcType=INTEGER},
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
       </if>
-      <if test="userNick != null" >
-        #{userNick,jdbcType=CHAR},
+      <if test="userIp != null">
+        #{userIp,jdbcType=VARCHAR},
       </if>
-      <if test="userPassword != null" >
-        #{userPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="userName != null" >
+      <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="userEmail != null" >
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null">
         #{userEmail,jdbcType=VARCHAR},
       </if>
-      <if test="userDetail != null" >
+      <if test="userProfilePhoto != null">
+        #{userProfilePhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="userRegistrationTime != null">
+        #{userRegistrationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userBirthday != null">
+        #{userBirthday,jdbcType=DATE},
+      </if>
+      <if test="userAge != null">
+        #{userAge,jdbcType=TINYINT},
+      </if>
+      <if test="userTelephoneNumber != null">
+        #{userTelephoneNumber,jdbcType=INTEGER},
+      </if>
+      <if test="userNickname != null">
+        #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="userRole != null">
+        #{userRole,jdbcType=TINYINT},
+      </if>
+      <if test="userDetail != null">
         #{userDetail,jdbcType=VARCHAR},
-      </if>
-      <if test="userPhone != null" >
-        #{userPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="userOhter != null" >
-        #{userOhter,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-
   <update id="updateById" parameterType="cn.yzstu.baldwinblog.bean.User" >
-    update all_user
-    <set >
-      <if test="userNick != null" >
-        user_nick = #{userNick,jdbcType=CHAR},
+    update yz_users
+    <set>
+      <if test="userIp != null">
+        user_ip = #{userIp,jdbcType=VARCHAR},
       </if>
-      <if test="userPassword != null" >
-        user_password = #{userPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="userName != null" >
+      <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="userEmail != null" >
+      <if test="userPassword != null">
+        user_password = #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null">
         user_email = #{userEmail,jdbcType=VARCHAR},
       </if>
-      <if test="userDetail != null" >
+      <if test="userProfilePhoto != null">
+        user_profile_photo = #{userProfilePhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="userRegistrationTime != null">
+        user_registration_time = #{userRegistrationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userBirthday != null">
+        user_birthday = #{userBirthday,jdbcType=DATE},
+      </if>
+      <if test="userAge != null">
+        user_age = #{userAge,jdbcType=TINYINT},
+      </if>
+      <if test="userTelephoneNumber != null">
+        user_telephone_number = #{userTelephoneNumber,jdbcType=INTEGER},
+      </if>
+      <if test="userNickname != null">
+        user_nickname = #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="userRole != null">
+        user_role = #{userRole,jdbcType=TINYINT},
+      </if>
+      <if test="userDetail != null">
         user_detail = #{userDetail,jdbcType=VARCHAR},
       </if>
-      <if test="userPhone != null" >
-        user_phone = #{userPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="userOhter != null" >
-        user_ohter = #{userOhter,jdbcType=VARCHAR},
-      </if>
     </set>
-    where user_id = #{userId,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=BIGINT}
   </update>
+
 </mapper>

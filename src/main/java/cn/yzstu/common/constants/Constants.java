@@ -14,4 +14,6 @@ public interface Constants {
     public static final String EMAIL_VERIFY_CONTANTS_PREFIX = "亲爱的用户您好，您本次注册的邮箱验证码为：";
 
     public static final String EMAIL_VERIFY_CONTANTS_SUFFIX = "，验证码将在三分钟内失效，请尽快完成注册！www.yzstu.cn";
+
+    public static final String SESSION_LOGIN_USER = "SESSION_USER";
 }

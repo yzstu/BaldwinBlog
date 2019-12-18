@@ -15,11 +15,11 @@ public interface DataBaseService<O> {
 
     ArrayList<O> getList(Criteria criteria);
 
-    O getById(Integer id);
+    O getById(Long id);
 
     int insert(O obj);
 
     int updateById(O obj);
 
-    int deleteById(Integer id);
+    int deleteById(Long id);
 }

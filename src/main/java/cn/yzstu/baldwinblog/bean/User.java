@@ -1,8 +1,5 @@
 package cn.yzstu.baldwinblog.bean;
 
-import cn.yzstu.common.utils.DateUtil;
-
-import java.util.Date;
 import java.util.Map;
 
 public class User {
@@ -22,33 +19,55 @@ public class User {
 
     private String userBirthday;
 
-    private Byte userAge;
+    private String userAge;
 
-    private Integer userTelephoneNumber;
+    private String userTelephoneNumber;
 
     private String userNickname;
 
+    private int userRole;
 
     private String userDetail;
 
-    private Byte userRole;
 
     public User(Map<String, String[]> paramMap) {
+        this.userId = userId;
+        this.userIp = paramMap.containsKey("ip") ? paramMap.get("ip")[0].trim() : null;
+        ;
+        this.userName = paramMap.containsKey("name") ? paramMap.get("name")[0].trim() : null;
+        this.userPassword = paramMap.containsKey("password") ? paramMap.get("password")[0].trim() : null;
+        this.userEmail = paramMap.containsKey("email") ? paramMap.get("email")[0].trim() : null;
+        this.userProfilePhoto = paramMap.containsKey("profilePhoto") ? paramMap.get("profilePhoto")[0].trim() : null;
+        ;
+        this.userRegistrationTime = paramMap.containsKey("registrationTime") ? paramMap.get("registrationTime")[0].trim() : null;
+        ;
+        this.userBirthday = paramMap.containsKey("birthday") ? paramMap.get("birthday")[0].trim() : null;
+        ;
+        this.userAge = paramMap.containsKey("age") ? paramMap.get("age")[0].trim() : null;
+        ;
+        this.userTelephoneNumber = paramMap.containsKey("phone") ? paramMap.get("phone")[0].trim() : null;
+        this.userNickname = paramMap.containsKey("nickName") ? paramMap.get("nickName")[0].trim() : null;
+        this.userRole = paramMap.containsKey("role") ? Integer.valueOf(paramMap.get("role")[0].trim()) : null;
+        this.userDetail = paramMap.containsKey("detail") ? paramMap.get("detail")[0].trim() : null;
+    }
 
-        this.userNickname = paramMap.containsKey("nickName") ? paramMap.get("nickName")[0].trim() : "null";
-        this.userPassword = paramMap.containsKey("password") ? paramMap.get("password")[0].trim() : "null";
-        this.userName = paramMap.containsKey("name") ? paramMap.get("name")[0].trim() : "null";
-        this.userEmail = paramMap.containsKey("email") ? paramMap.get("email")[0].trim() : "null";
-        this.userTelephoneNumber = paramMap.containsKey("phone") ? Integer.valueOf(paramMap.get("phone")[0].trim()) : 000;
-        this.userIp = paramMap.containsKey("ip") ? paramMap.get("ip")[0].trim() : "null";
-        this.userProfilePhoto = paramMap.containsKey("profilePhoto") ? paramMap.get("profilePhoto")[0].trim() : "null";
-        this.userRegistrationTime = paramMap.containsKey("registrationTime") ? paramMap.get("registrationTime")[0].trim() : "1900-01-01";
-        this.userBirthday = paramMap.containsKey("birthday") ? paramMap.get("birthday")[0].trim() : "1900-01-01";
-        this.userAge = paramMap.containsKey("age") ? Byte.valueOf(paramMap.get("age")[0].trim()) : 18;
-        this.userRole = paramMap.containsKey("role") ? Byte.valueOf(paramMap.get("role")[0].trim()) : 2;
-
-
-        this.userDetail = paramMap.containsKey("detail") ? paramMap.get("detail")[0].trim() : "null";
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userIp='" + userIp + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userProfilePhoto='" + userProfilePhoto + '\'' +
+                ", userRegistrationTime='" + userRegistrationTime + '\'' +
+                ", userBirthday='" + userBirthday + '\'' +
+                ", userAge='" + userAge + '\'' +
+                ", userTelephoneNumber='" + userTelephoneNumber + '\'' +
+                ", userNickname='" + userNickname + '\'' +
+                ", userRole=" + userRole +
+                ", userDetail='" + userDetail + '\'' +
+                '}';
     }
 
     public Long getUserId() {
@@ -64,7 +83,7 @@ public class User {
     }
 
     public void setUserIp(String userIp) {
-        this.userIp = userIp;
+        this.userIp = userIp == null ? null : userIp.trim();
     }
 
     public String getUserName() {
@@ -72,7 +91,7 @@ public class User {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public String getUserPassword() {
@@ -80,7 +99,7 @@ public class User {
     }
 
     public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+        this.userPassword = userPassword == null ? null : userPassword.trim();
     }
 
     public String getUserEmail() {
@@ -88,7 +107,7 @@ public class User {
     }
 
     public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+        this.userEmail = userEmail == null ? null : userEmail.trim();
     }
 
     public String getUserProfilePhoto() {
@@ -96,7 +115,7 @@ public class User {
     }
 
     public void setUserProfilePhoto(String userProfilePhoto) {
-        this.userProfilePhoto = userProfilePhoto;
+        this.userProfilePhoto = userProfilePhoto == null ? null : userProfilePhoto.trim();
     }
 
     public String getUserRegistrationTime() {
@@ -104,7 +123,7 @@ public class User {
     }
 
     public void setUserRegistrationTime(String userRegistrationTime) {
-        this.userRegistrationTime = userRegistrationTime;
+        this.userRegistrationTime = userRegistrationTime == null ? null : userRegistrationTime.trim();
     }
 
     public String getUserBirthday() {
@@ -112,15 +131,23 @@ public class User {
     }
 
     public void setUserBirthday(String userBirthday) {
-        this.userBirthday = userBirthday;
+        this.userBirthday = userBirthday == null ? null : userBirthday.trim();
     }
 
-    public Integer getUserTelephoneNumber() {
+    public String getUserAge() {
+        return userAge;
+    }
+
+    public void setUserAge(String userAge) {
+        this.userAge = userAge == null ? null : userAge.trim();
+    }
+
+    public String getUserTelephoneNumber() {
         return userTelephoneNumber;
     }
 
-    public void setUserTelephoneNumber(Integer userTelephoneNumber) {
-        this.userTelephoneNumber = userTelephoneNumber;
+    public void setUserTelephoneNumber(String userTelephoneNumber) {
+        this.userTelephoneNumber = userTelephoneNumber == null ? null : userTelephoneNumber.trim();
     }
 
     public String getUserNickname() {
@@ -128,7 +155,15 @@ public class User {
     }
 
     public void setUserNickname(String userNickname) {
-        this.userNickname = userNickname;
+        this.userNickname = userNickname == null ? null : userNickname.trim();
+    }
+
+    public int getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(int userRole) {
+        this.userRole = userRole;
     }
 
     public String getUserDetail() {
@@ -136,22 +171,8 @@ public class User {
     }
 
     public void setUserDetail(String userDetail) {
-        this.userDetail = userDetail;
+        this.userDetail = userDetail == null ? null : userDetail.trim();
     }
 
-    public Byte getUserRole() {
-        return userRole;
-    }
 
-    public void setUserRole(Byte userRole) {
-        this.userRole = userRole;
-    }
-
-    public Byte getUserAge() {
-        return userAge;
-    }
-
-    public void setUserAge(Byte userAge) {
-        this.userAge = userAge;
-    }
 }

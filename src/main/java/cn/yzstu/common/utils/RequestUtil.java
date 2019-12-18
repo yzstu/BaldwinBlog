@@ -1,8 +1,13 @@
 package cn.yzstu.common.utils;
 
+import cn.yzstu.baldwinblog.bean.User;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
+
+import static cn.yzstu.common.constants.Constants.SESSION_LOGIN_USER;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -60,5 +65,14 @@ public class RequestUtil {
             ip = request.getRemoteAddr();
         }
         return ip;
+    }
+
+    public static User getSessionLoginUser(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (null == session) {
+            return null;
+        }
+        User user = (User) session.getAttribute(SESSION_LOGIN_USER);
+        return user;
     }
 }

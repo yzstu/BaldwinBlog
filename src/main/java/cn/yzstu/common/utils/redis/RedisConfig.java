@@ -96,11 +96,12 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     /**
      * 注入封装RedisTemplate
-     * @Title: redisUtil
+     *
      * @return RedisUtil
-     * @autor Baldwin
-     * @date 2017年12月21日
      * @throws
+     * @Title: redisUtil
+     * @autor Baldwin
+     * @date 2019年12月14日
      */
     @Bean
     public RedisUtil redisUtil(RedisTemplate<String, Object> redisTemplate) {

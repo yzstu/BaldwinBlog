@@ -22,8 +22,8 @@ import static cn.yzstu.common.constants.Constants.SESSION_LOGIN_USER;
 public class RequestUtil {
 
     public static Map<String, String[]> getRequestParamMap(HttpServletRequest request) {
-        Map<String, String[]> hashMap = new HashMap<>();
-        hashMap = request.getParameterMap();
+
+        Map<String, String[]> hashMap = new HashMap<>(request.getParameterMap());
         String[] ip = {getIp(request)};
         hashMap.put("ip", ip);
         return hashMap;

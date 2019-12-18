@@ -68,6 +68,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         //获取请求URI
         path = path.substring(basePath.length());
         Set<String> neverInterCeptPathSet = new HashSet<>();
+        neverInterCeptPathSet.add("/login/index.jsp");
+        neverInterCeptPathSet.add("/error");
         neverInterCeptPathSet.add("/user/login.action");
         neverInterCeptPathSet.add("/user/regist.action");
         neverInterCeptPathSet.add("/user/emailVerify.action");

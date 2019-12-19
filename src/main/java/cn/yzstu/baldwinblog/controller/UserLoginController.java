@@ -27,14 +27,13 @@ import java.util.Map;
  * \
  */
 @Controller
-@RequestMapping(value = "/user")
-public class UserController {
-
-    @Autowired
-    private UserService userService;
+@RequestMapping(value = "/login")
+public class UserLoginController {
 
     @Autowired
     RedisUtil redisUtil;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/login.action")
     ModelAndView userLogin(HttpServletRequest request) {

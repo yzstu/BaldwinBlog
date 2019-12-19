@@ -448,32 +448,32 @@
 					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/FF34F311DDC43E2AF63BE897BCA24F05/100"><cite>NULL</cite></a></dd>
 					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/59AA25A7627284AE62C8E6EBDC6FE417/100"><cite>吓一跳</cite></a></dd>
 					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/28B021E0F5AF0A4B9B781A24329FE897/100"><cite>如初</cite></a></dd>
-					        </dl>
-					    </div>
+							</dl>
+						</div>
 					</div>
-		        </div>
-		    </div>
-		</div>
-    </div>
-    <footer class="grid-footer">
-		<div class="footer-fixed">
-			<div class="copyright">
-				<div class="info">
-					<div class="contact">
-						<a href="javascript:void(0)" class="github" target="_blank"><i class="fa fa-github"></i></a>
-						<a href="https://wpa.qq.com/msgrd?v=3&uin=930054439&site=qq&menu=yes" class="qq" target="_blank"
-						   title="930054439"><i class="fa fa-qq"></i></a>
-						<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=gbiysbG0tbWyuMHw8K-i7uw"
-						   class="email" target="_blank" title="930054439@qq.com"><i class="fa fa-envelope"></i></a>
-						<a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
-					</div>
-					<p class="mt05">
-						Copyright &copy; 2018-2018 Baldwin All Rights Reserved V.1.0.0 蜀ICP备18008600号
-					</p>
 				</div>
 			</div>
+	</div>
+</div>
+<footer class="grid-footer">
+	<div class="footer-fixed">
+		<div class="copyright">
+			<div class="info">
+				<div class="contact">
+					<a href="javascript:void(0)" class="github" target="_blank"><i class="fa fa-github"></i></a>
+					<a href="https://wpa.qq.com/msgrd?v=3&uin=930054439&site=qq&menu=yes" class="qq" target="_blank"
+					   title="930054439"><i class="fa fa-qq"></i></a>
+					<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=gbiysbG0tbWyuMHw8K-i7uw"
+					   class="email" target="_blank" title="930054439@qq.com"><i class="fa fa-envelope"></i></a>
+					<a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
+				</div>
+				<p class="mt05">
+					Copyright &copy; 2018-2018 www.yzstu.cn All Rights Reserved V.1.0.0 豫ICP备19018621号-1
+				</p>
+			</div>
 		</div>
-	</footer>
+	</div>
+</footer>
 <script src="<%=basePath%>layui/layui.js"></script>
 <script src="<%=basePath%>js/yss/gloable.js"></script>
 <script src="<%=basePath%>js/plugins/nprogress.js"></script>

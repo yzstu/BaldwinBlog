@@ -220,7 +220,7 @@
         <div class="container">
             <div class="layui-row">
                 <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 text-center">
-                    <p>Copyright &copy; 2018-2018 燕十三 All Rights Reserved V.3.1.3 蜀ICP备18008600号</p>
+                    <p>Copyright &copy; 2018-2018 www.yzstu.cn All Rights Reserved V.1.0.0 豫ICP备19018621号-1</p>
                 </div>
             </div>
         </div>

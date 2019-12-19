@@ -56,7 +56,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
                 response.getWriter().print("LoginTimeout");
             } else {
                 loggerFactory.info("尚未登录，跳转到登录界面");
-                response.sendRedirect(request.getContextPath() + "user/login.action");
+                response.sendRedirect(request.getContextPath() + "login.action");
             }
             return false;
         }
@@ -68,15 +68,19 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         //获取请求URI
         path = path.substring(basePath.length());
         Set<String> neverInterCeptPathSet = new HashSet<>();
-        neverInterCeptPathSet.add("/login/index.jsp");
+        neverInterCeptPathSet.add("/css/");
+        neverInterCeptPathSet.add("/font/");
+        neverInterCeptPathSet.add("/font-awesome/");
+        neverInterCeptPathSet.add("/image/");
+        neverInterCeptPathSet.add("/js/");
+        neverInterCeptPathSet.add("/layui/");
         neverInterCeptPathSet.add("/error");
-        neverInterCeptPathSet.add("/user/login.action");
-        neverInterCeptPathSet.add("/user/regist.action");
-        neverInterCeptPathSet.add("/user/emailVerify.action");
+        neverInterCeptPathSet.add("/login/");
 
-        return neverInterCeptPathSet.contains(path);
-
-
+        for (String begin : neverInterCeptPathSet) {
+            if (path.startsWith(begin)) return true;
+        }
+        return false;
     }
 
     @Override

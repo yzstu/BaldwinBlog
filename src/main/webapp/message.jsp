@@ -16,35 +16,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width"/>
-    <meta name="author" content="www.yanshisan.cn"/>
+    <meta name="author" content="www.yzstu.cn"/>
     <meta name="robots" content="all"/>
     <title>留言板</title>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="layui/css/layui.css" />
-    <link rel="stylesheet" href="css/master.css" />
-    <link rel="stylesheet" href="css/gloable.css" />
-    <link rel="stylesheet" href="css/nprogress.css" />
-    <link rel="stylesheet" href="css/message.css" /> 
+    <link rel="stylesheet" href="<%=basePath%>font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<%=basePath%>layui/css/layui.css"/>
+    <link rel="stylesheet" href="<%=basePath%>css/master.css"/>
+    <link rel="stylesheet" href="<%=basePath%>css/gloable.css"/>
+    <link rel="stylesheet" href="<%=basePath%>css/nprogress.css"/>
+    <link rel="stylesheet" href="<%=basePath%>css/message.css"/>
 </head>
 <body>
-    <div class="header">
-    </div>
-    <header class="gird-header">
-        <div class="header-fixed">
-            <div class="header-inner">
-                <a href="javascript:void(0)" class="header-logo" id="logo">Mr.Yss</a>
-                <nav class="nav" id="nav">
-                    <ul>
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="article.html">博客</a></li>
-                        <li><a href="message.html">留言</a></li>
-                        <li><a href="link.html">友链</a></li>
-                    </ul>
-                </nav>
-                <a href="#" class="blog-user">
-                    <i class="fa fa-qq"></i>
-                </a>
-                <a class="phone-menu">
+<div class="header">
+</div>
+<header class="gird-header">
+    <div class="header-fixed">
+        <div class="header-inner">
+            <a href="javascript:void(0)" class="header-logo" id="logo">Mr.Yss</a>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="article.html">博客</a></li>
+                    <li><a href="message.html">留言</a></li>
+                    <li><a href="link.html">友链</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="blog-user">
+                <i class="fa fa-qq"></i>
+            </a>
+            <a class="phone-menu">
                     <i></i>
                     <i></i>
                     <i></i>
@@ -185,35 +185,35 @@
             </li>
         </ul>
     </div>
-</div>
+        </div>
     </div>
-    <footer class="grid-footer">
-        <div class="footer-fixed">
-            <div class="copyright">
-                <div class="info">
-                    <div class="contact">
-                        <a href="javascript:void(0)" class="github" target="_blank"><i class="fa fa-github"></i></a>
-                        <a href="#" class="qq" target="_blank" ><i class="fa fa-qq"></i></a>
-                        <a href="#" class="email" target="_blank" ><i class="fa fa-envelope"></i></a>
-                        <a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
-                    </div>
-                    <p class="mt05">
-                        Copyright &copy; 2018-2019 www.yzstu.cn All Rights Reserved V.3.1.3 蜀ICP备18008600号
-                    </p>
+<footer class="grid-footer">
+    <div class="footer-fixed">
+        <div class="copyright">
+            <div class="info">
+                <div class="contact">
+                    <a href="javascript:void(0)" class="github" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="#" class="qq" target="_blank"><i class="fa fa-qq"></i></a>
+                    <a href="#" class="email" target="_blank"><i class="fa fa-envelope"></i></a>
+                    <a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
                 </div>
+                <p class="mt05">
+                    Copyright &copy; 2018-2018 www.yzstu.cn All Rights Reserved V.1.0.0 豫ICP备19018621号-1
+                </p>
             </div>
         </div>
-    </footer>
-    <script src="layui/layui.js"></script>
-    <script src="js/yss/gloable.js"></script>
-    <script src="js/plugins/nprogress.js"></script>
-    <script>NProgress.start();</script>
-    <script src="js/pagemessage.js"></script>
-    <script>NProgress.start();</script>
-    <script> 
-        window.onload = function () {
-            NProgress.done();
-        };
-    </script>
+    </div>
+</footer>
+<script src="<%=basePath%>layui/layui.js"></script>
+<script src="<%=basePath%>js/yss/gloable.js"></script>
+<script src="<%=basePath%>js/plugins/nprogress.js"></script>
+<script>NProgress.start();</script>
+<script src="<%=basePath%>js/pagemessage.js"></script>
+<script>NProgress.start();</script>
+<script>
+    window.onload = function () {
+        NProgress.done();
+    };
+</script>
 </body>
 </html>

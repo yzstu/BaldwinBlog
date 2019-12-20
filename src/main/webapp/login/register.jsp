@@ -28,7 +28,7 @@
                         <form method="POST" class="my-login-validation" novalidate="" action="/user/regist.action">
 
                             <div class="form-group">
-                                <label for="nickName">Name</label>
+                                <label for="nickName">NickName</label>
                                 <input id="nickName" type="text" class="form-control" name="nickName" required
                                        autofocus>
                                 <div class="invalid-feedback">

@@ -63,7 +63,7 @@ public class User {
 
         this.userTelephoneNumber = paramMap.containsKey("phone") ? paramMap.get("phone").trim() : null;
         this.userNickname = paramMap.containsKey("nickName") ? paramMap.get("nickName").trim() : null;
-        this.userRole = paramMap.containsKey("role") ? Integer.valueOf(paramMap.get("role").trim()) : null;
+        this.userRole = paramMap.containsKey("role") ? Integer.valueOf(paramMap.get("role").trim()) : 2;
         this.userDetail = paramMap.containsKey("detail") ? paramMap.get("detail").trim() : null;
     }
 

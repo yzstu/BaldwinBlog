@@ -1,7 +1,6 @@
 package cn.yzstu.common.cinfiguration;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -25,7 +24,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@ConfigurationProperties(prefix = "swagger")
 public class Swagger2 {
 
     private static final String BASE_PACKAGE = "cn.yzstu.baldwinblog.controller";
@@ -43,9 +41,9 @@ public class Swagger2 {
                 .enable(enableSwagger)
                 .select()
                 //指定扫描的包
-                .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE))
+                .apis(RequestHandlerSelectors.any())
                 //设置此组只匹配/login/**的请求
-                .paths(PathSelectors.ant("/login/**"))
+                .paths(PathSelectors.any())
                 .build();
     }
 

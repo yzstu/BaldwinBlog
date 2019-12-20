@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width"/>
-    <title>首页模板</title>
+    <title>首页</title>
     <link href="<%=basePath%>layui/css/layui.css" rel="stylesheet" type="text/css">
     <link href="<%=basePath%>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="<%=basePath%>css/index_style.css" rel="stylesheet" type="text/css">

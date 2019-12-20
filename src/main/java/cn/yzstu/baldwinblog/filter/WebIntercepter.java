@@ -1,7 +1,9 @@
 package cn.yzstu.baldwinblog.filter;
 
 import cn.yzstu.baldwinblog.bean.User;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,9 +19,11 @@ import javax.servlet.http.HttpSession;
  * \* Description:
  * \
  */
-public class WebIntercepter extends HandlerInterceptorAdapter {
+public class WebIntercepter implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        Log logFactory = LogFactory.getLog(WebIntercepter.class);
+        logFactory.info("启动preHandel");
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("loginUser");
         if (null == user) {

@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Register</h4>
                         <form method="POST" class="my-login-validation" novalidate=""
-                              action="/login/emailVerify.action">
+                              action="/user/emailVerify.action">
 
                             <input type="hidden" id="nickName" name="nickName"
                                    value="<%=request.getParameter("nickName")%>">

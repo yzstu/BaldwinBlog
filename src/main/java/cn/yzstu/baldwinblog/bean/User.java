@@ -30,6 +30,22 @@ public class User {
     private String userDetail;
 
 
+    public User(Long userId, String userIp, String userName, String userPassword, String userEmail, String userProfilePhoto, String userRegistrationTime, String userBirthday, String userAge, String userTelephoneNumber, String userNickname, Integer userRole, String userDetail) {
+        this.userId = userId;
+        this.userIp = userIp;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userEmail = userEmail;
+        this.userProfilePhoto = userProfilePhoto;
+        this.userRegistrationTime = userRegistrationTime;
+        this.userBirthday = userBirthday;
+        this.userAge = userAge;
+        this.userTelephoneNumber = userTelephoneNumber;
+        this.userNickname = userNickname;
+        this.userRole = userRole;
+        this.userDetail = userDetail;
+    }
+
     public User(Map<String, String[]> paramMap) {
         this.userId = userId;
         this.userIp = paramMap.containsKey("ip") ? paramMap.get("ip")[0].trim() : null;

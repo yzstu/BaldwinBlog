@@ -20,6 +20,20 @@
     user_id, user_ip, user_name, user_password, user_email, user_profile_photo, user_registration_time, 
     user_birthday, user_age, user_telephone_number, user_nickname, user_role, user_detail
   </sql>
+
+    <sql id="getUserListSql">
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="condition.email != null">
+                and user_email = #{condition.email}
+            </if>
+        </trim>
+    </sql>
+    <select id="getList" resultMap="BaseResultMap" parameterType="cn.yzstu.common.Criteria">
+        select * from yz_users
+        <if test="_parameter != null">
+            <include refid="getUserListSql"/>
+        </if>
+    </select>
     <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Long">
         select
         <include refid="Base_Column_List"/>
@@ -115,7 +129,7 @@
                 #{userDetail,jdbcType=VARCHAR},
             </if>
         </trim>
-  </insert>
+    </insert>
     <update id="updateById" parameterType="cn.yzstu.baldwinblog.bean.User">
         update yz_users
         <set>
@@ -156,6 +170,6 @@
                 user_detail = #{userDetail,jdbcType=VARCHAR},
             </if>
         </set>
-    where user_id = #{userId,jdbcType=BIGINT}
-  </update>
+        where user_id = #{userId,jdbcType=BIGINT}
+    </update>
 </mapper>

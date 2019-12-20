@@ -2,11 +2,14 @@ package cn.yzstu.baldwinblog.controller;
 
 import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.baldwinblog.service.UserService;
+import cn.yzstu.common.Criteria;
 import cn.yzstu.common.constants.Constants;
 import cn.yzstu.common.utils.RandomUtil;
 import cn.yzstu.common.utils.RequestUtil;
 import cn.yzstu.common.utils.email.EmailUtil;
 import cn.yzstu.common.utils.redis.RedisUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.SendFailedException;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -27,7 +31,8 @@ import java.util.Map;
  * \
  */
 @Controller
-@RequestMapping(value = "/login")
+@RequestMapping(value = "/user")
+@Api(value = "user相关接口", description = "user")
 public class UserLoginController {
 
     @Autowired
@@ -36,19 +41,32 @@ public class UserLoginController {
     private UserService userService;
 
     @RequestMapping(value = "/login.action")
+    @ApiOperation(value = "登录接口", notes = "进入登录界面", response = ModelAndView.class)
     ModelAndView userLogin(HttpServletRequest request) {
 
         ModelAndView mv = new ModelAndView();
 
         Map<String, String[]> paramMap = RequestUtil.getRequestParamMap(request);
         String email = paramMap.containsKey("email") ? paramMap.get("email")[0] : "nothing";
+        String password = paramMap.containsKey("password") ? paramMap.get("password")[0] : "nothing";
 
-        if (email.equals("nothing")) {
-            request.setAttribute("msg", "邮箱不存在，请检查后重新输入");
+        Criteria criteria = new Criteria();
+        criteria.put("email", email);
+        ArrayList<User> users = userService.getList(criteria);
+        if (users.size() == 0) {
+            request.setAttribute("msg", "邮箱不存在，请检查邮箱后重新输入！");
             mv.setViewName("forward:/login/index.jsp");
             return mv;
         }
 
+        if (!password.equals(users.get(0).getUserPassword())) {
+            request.setAttribute("msg", "密码不正确，请检查密码后重新输入！");
+            mv.setViewName("forward:/login/index.jsp");
+            return mv;
+        }
+
+        request.setAttribute("msg", null);
+        mv.setViewName("forward:/index.jsp");
 
         return mv;
     }
@@ -60,6 +78,7 @@ public class UserLoginController {
      * @return
      */
     @RequestMapping(value = "/regist.action")
+    @ApiOperation(value = "注册接口", notes = "主要是用户信息收集", response = ModelAndView.class)
     public ModelAndView userRegist(HttpServletRequest request) {
 
         ModelAndView mv = new ModelAndView();
@@ -92,6 +111,7 @@ public class UserLoginController {
      * @return
      */
     @RequestMapping(value = "/emailVerify.action")
+    @ApiOperation(value = "邮箱验证接口", notes = "验证用户邮箱", response = ModelAndView.class)
     public ModelAndView sendMail(HttpServletRequest request) {
 
         ModelAndView mv = new ModelAndView();
@@ -121,5 +141,6 @@ public class UserLoginController {
 
         return mv;
     }
+
 
 }

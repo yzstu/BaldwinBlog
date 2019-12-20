@@ -36,7 +36,9 @@ public class BaldwinblogApplication extends WebMvcConfigurerAdapter {
         excludePath.add("/js/**");
         excludePath.add("/layui/**");
         excludePath.add("/login/**");
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
-                .excludePathPatterns(excludePath);
+        excludePath.add("/error");
+        excludePath.add("/favicon.ico");
+        excludePath.add("/*.html");
+        //registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(excludePath);
     }
 }

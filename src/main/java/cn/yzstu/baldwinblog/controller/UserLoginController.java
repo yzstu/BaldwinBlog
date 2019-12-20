@@ -2,12 +2,12 @@ package cn.yzstu.baldwinblog.controller;
 
 import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.baldwinblog.service.UserService;
-import cn.yzstu.common.Criteria;
 import cn.yzstu.common.constants.Constants;
 import cn.yzstu.common.utils.RandomUtil;
 import cn.yzstu.common.utils.RequestUtil;
 import cn.yzstu.common.utils.email.EmailUtil;
 import cn.yzstu.common.utils.redis.RedisUtil;
+import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.SendFailedException;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -46,27 +46,20 @@ public class UserLoginController {
 
         ModelAndView mv = new ModelAndView();
 
-        Map<String, String[]> paramMap = RequestUtil.getRequestParamMap(request);
-        String email = paramMap.containsKey("email") ? paramMap.get("email")[0] : "nothing";
-        String password = paramMap.containsKey("password") ? paramMap.get("password")[0] : "nothing";
+        Map<String, String> paramMap = RequestUtil.getRequestParamMap(request);
+        //减少controller中的代码，提高程序复用
+        JSONObject retJSon = userService.doLogin(paramMap);
 
-        Criteria criteria = new Criteria();
-        criteria.put("email", email);
-        ArrayList<User> users = userService.getList(criteria);
-        if (users.size() == 0) {
-            request.setAttribute("msg", "邮箱不存在，请检查邮箱后重新输入！");
-            mv.setViewName("forward:/login/index.jsp");
-            return mv;
-        }
+        HttpSession session = request.getSession();
+        //session过期时间
+        session.setMaxInactiveInterval(5 * 30);
 
-        if (!password.equals(users.get(0).getUserPassword())) {
-            request.setAttribute("msg", "密码不正确，请检查密码后重新输入！");
-            mv.setViewName("forward:/login/index.jsp");
-            return mv;
-        }
+        if (paramMap.get("remember") != null && paramMap.get("remember").equals("1"))
+            session.setMaxInactiveInterval(-1);
 
-        request.setAttribute("msg", null);
-        mv.setViewName("forward:/index.jsp");
+        session.setAttribute("loginUser", retJSon.get("user"));
+        request.setAttribute("msg", retJSon.get("msg"));
+        mv.setViewName(retJSon.getString("viewName"));
 
         return mv;
     }
@@ -116,9 +109,9 @@ public class UserLoginController {
 
         ModelAndView mv = new ModelAndView();
 
-        Map<String, String[]> paramMap = RequestUtil.getRequestParamMap(request);
+        Map<String, String> paramMap = RequestUtil.getRequestParamMap(request);
 
-        String userMail = paramMap.containsKey("email") ? paramMap.get("email")[0] : "nothing";
+        String userMail = paramMap.containsKey("email") ? paramMap.get("email") : "nothing";
         String verifyCode = (String) redisUtil.get(userMail);
         if (null == verifyCode) {//验证码不存在===》失效
             request.setAttribute("msg", "验证码失效，请重新发送！");
@@ -126,7 +119,7 @@ public class UserLoginController {
             return mv;
         }
 
-        String userCode = paramMap.get("emailVerify")[0];
+        String userCode = paramMap.get("emailVerify");
         if (!verifyCode.equalsIgnoreCase(userCode)) {
             request.setAttribute("msg", "验证码错误，请重新输入！");
             mv.setViewName("forward:/login/register.jsp");

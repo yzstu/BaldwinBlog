@@ -2,6 +2,9 @@ package cn.yzstu.baldwinblog.service;
 
 import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.baldwinblog.service.baseinterface.DataBaseService;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.Map;
 
 /**
  * @描述
@@ -12,4 +15,5 @@ import cn.yzstu.baldwinblog.service.baseinterface.DataBaseService;
  */
 public interface UserService extends DataBaseService<User> {
 
+    JSONObject doLogin(Map<String, String> paramMap);
 }

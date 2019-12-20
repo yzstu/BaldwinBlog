@@ -4,10 +4,12 @@ import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.baldwinblog.mapper.UserMapper;
 import cn.yzstu.baldwinblog.service.UserService;
 import cn.yzstu.common.Criteria;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -48,5 +50,38 @@ public class UserServiceImpl implements UserService {
     @Override
     public int deleteById(Long id) {
         return userMapper.deleteById(id);
+    }
+
+    @Override
+    public JSONObject doLogin(Map<String, String> paramMap) {
+        JSONObject retJson = new JSONObject();
+        retJson.put("msg", null);
+        retJson.put("viewName", "forward:/index.jsp");
+        retJson.put("user", null);
+
+        String email = paramMap.containsKey("email") ? paramMap.get("email") : "nothing";
+        String password = paramMap.containsKey("password") ? paramMap.get("password") : "nothing";
+
+        Criteria criteria = new Criteria();
+        criteria.put("email", email);
+        ArrayList<User> users = getList(criteria);
+        if (users.size() == 0) {
+            retJson.put("retCode", "404");
+            retJson.put("msg", "邮箱不存在，请检查邮箱后重新输入！");
+            retJson.put("viewName", "forward:/login/index.jsp");
+            return retJson;
+        }
+
+        User user = users.get(0);
+        if (!password.equals(user.getUserPassword())) {
+            retJson.put("retCode", "304");
+            retJson.put("msg", "密码不正确，请检查密码后重新输入！");
+            retJson.put("viewName", "forward:/login/index.jsp");
+            return retJson;
+        }
+
+        retJson.put("user", user);
+
+        return retJson;
     }
 }

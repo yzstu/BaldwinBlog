@@ -49,7 +49,8 @@
 
                             <div class="form-group">
                                 <div class="custom-checkbox custom-control">
-                                    <input type="checkbox" name="remember" id="remember" class="custom-control-input">
+                                    <input type="checkbox" name="remember" id="remember" value="1"
+                                           class="custom-control-input">
                                     <label for="remember" class="custom-control-label">Remember Me</label>
                                 </div>
                             </div>
@@ -70,7 +71,7 @@
                     </div>
                 </div>
                 <div class="footer">
-                    Copyright &copy; 2017 &mdash; www.yzstu.cn
+                    <p>Copyright &copy; 2018-2018 www.yzstu.cn All Rights Reserved V.1.0.0 豫ICP备19018621号-1</p>
                 </div>
             </div>
         </div>

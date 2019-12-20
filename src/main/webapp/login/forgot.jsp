@@ -42,11 +42,15 @@
                                     Reset Password
                                 </button>
                             </div>
+                            <div class="mt-4 text-center">
+                                <c:if test="${requestScope.msg != null}"><%=request.getAttribute("msg")%>
+                                </c:if>
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div class="footer">
-                    Copyright &copy; 2017 &mdash; Your Company
+                    <p>Copyright &copy; 2018-2018 www.yzstu.cn All Rights Reserved V.1.0.0 豫ICP备19018621号-1</p>
                 </div>
             </div>
         </div>

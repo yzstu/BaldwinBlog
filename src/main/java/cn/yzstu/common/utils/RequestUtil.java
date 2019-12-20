@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static cn.yzstu.common.constants.Constants.SESSION_LOGIN_USER;
 
@@ -21,12 +22,23 @@ import static cn.yzstu.common.constants.Constants.SESSION_LOGIN_USER;
  */
 public class RequestUtil {
 
-    public static Map<String, String[]> getRequestParamMap(HttpServletRequest request) {
+    public static Map<String, String[]> getRequestParamsMap(HttpServletRequest request) {
 
         Map<String, String[]> hashMap = new HashMap<>(request.getParameterMap());
         String[] ip = {getIp(request)};
         hashMap.put("ip", ip);
         return hashMap;
+    }
+
+    public static Map<String, String> getRequestParamMap(HttpServletRequest request) {
+
+        Map<String, String[]> hashMap = getRequestParamsMap(request);
+        Map<String, String> retMap = new HashMap<>();
+        Set<String> keySet = hashMap.keySet();
+        for (String key : keySet) {
+            retMap.put(key, hashMap.get(key)[0]);
+        }
+        return retMap;
     }
 
     private static String getIp(HttpServletRequest request) {

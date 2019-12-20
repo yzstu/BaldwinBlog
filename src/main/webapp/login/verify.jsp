@@ -48,9 +48,6 @@
                                 <input id="emailVerify" type="text" class="form-control" name="emailVerify"
                                        required
                                        data-eye>
-                                <div class="invalid-feedback">
-                                    <c:if test="<%=!request.getParameter("msg").equals("nothing")%>"><%=request.getParameter("msg")%>></c:if>
-                                </div>
                             </div>
 
                             <div class="form-group m-0">
@@ -69,7 +66,7 @@
                     </div>
                 </div>
                 <div class="footer">
-                    Copyright &copy; 2017 &mdash; Your Company
+                    <p>Copyright &copy; 2018-2018 www.yzstu.cn All Rights Reserved V.1.0.0 豫ICP备19018621号-1</p>
                 </div>
             </div>
         </div>

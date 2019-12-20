@@ -1,6 +1,7 @@
 package cn.yzstu.baldwinblog;
 
 import cn.yzstu.baldwinblog.filter.LoginInterceptor;
+import cn.yzstu.baldwinblog.filter.WebIntercepter;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -28,6 +29,7 @@ public class BaldwinblogApplication extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        //添加不需要过滤的路=路径
         List<String> excludePath = new ArrayList<>();
         excludePath.add("/css/**");
         excludePath.add("/font/**");
@@ -35,10 +37,9 @@ public class BaldwinblogApplication extends WebMvcConfigurerAdapter {
         excludePath.add("/image/**");
         excludePath.add("/js/**");
         excludePath.add("/layui/**");
-        excludePath.add("/login/**");
         excludePath.add("/error");
-        excludePath.add("/favicon.ico");
-        excludePath.add("/*.html");
-        //registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(excludePath);
+
+        /*registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns(excludePath);*/
+        registry.addInterceptor(new WebIntercepter()).addPathPatterns("/").excludePathPatterns(excludePath);
     }
 }

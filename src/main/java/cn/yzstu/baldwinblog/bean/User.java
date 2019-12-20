@@ -46,25 +46,25 @@ public class User {
         this.userDetail = userDetail;
     }
 
-    public User(Map<String, String[]> paramMap) {
+    public User(Map<String, String> paramMap) {
         this.userId = userId;
-        this.userIp = paramMap.containsKey("ip") ? paramMap.get("ip")[0].trim() : null;
-        ;
-        this.userName = paramMap.containsKey("name") ? paramMap.get("name")[0].trim() : null;
-        this.userPassword = paramMap.containsKey("password") ? paramMap.get("password")[0].trim() : null;
-        this.userEmail = paramMap.containsKey("email") ? paramMap.get("email")[0].trim() : null;
-        this.userProfilePhoto = paramMap.containsKey("profilePhoto") ? paramMap.get("profilePhoto")[0].trim() : null;
-        ;
-        this.userRegistrationTime = paramMap.containsKey("registrationTime") ? paramMap.get("registrationTime")[0].trim() : null;
-        ;
-        this.userBirthday = paramMap.containsKey("birthday") ? paramMap.get("birthday")[0].trim() : null;
-        ;
-        this.userAge = paramMap.containsKey("age") ? paramMap.get("age")[0].trim() : null;
-        ;
-        this.userTelephoneNumber = paramMap.containsKey("phone") ? paramMap.get("phone")[0].trim() : null;
-        this.userNickname = paramMap.containsKey("nickName") ? paramMap.get("nickName")[0].trim() : null;
-        this.userRole = paramMap.containsKey("role") ? Integer.valueOf(paramMap.get("role")[0].trim()) : null;
-        this.userDetail = paramMap.containsKey("detail") ? paramMap.get("detail")[0].trim() : null;
+        this.userIp = paramMap.containsKey("ip") ? paramMap.get("ip").trim() : null;
+
+        this.userName = paramMap.containsKey("name") ? paramMap.get("name").trim() : null;
+        this.userPassword = paramMap.containsKey("password") ? paramMap.get("password").trim() : null;
+        this.userEmail = paramMap.containsKey("email") ? paramMap.get("email").trim() : null;
+        this.userProfilePhoto = paramMap.containsKey("profilePhoto") ? paramMap.get("profilePhoto").trim() : null;
+
+        this.userRegistrationTime = paramMap.containsKey("registrationTime") ? paramMap.get("registrationTime").trim() : null;
+
+        this.userBirthday = paramMap.containsKey("birthday") ? paramMap.get("birthday").trim() : null;
+
+        this.userAge = paramMap.containsKey("age") ? paramMap.get("age").trim() : null;
+
+        this.userTelephoneNumber = paramMap.containsKey("phone") ? paramMap.get("phone").trim() : null;
+        this.userNickname = paramMap.containsKey("nickName") ? paramMap.get("nickName").trim() : null;
+        this.userRole = paramMap.containsKey("role") ? Integer.valueOf(paramMap.get("role").trim()) : null;
+        this.userDetail = paramMap.containsKey("detail") ? paramMap.get("detail").trim() : null;
     }
 
     @Override

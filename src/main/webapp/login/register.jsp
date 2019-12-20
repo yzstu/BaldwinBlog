@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -89,9 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="invalid-feedback">
-                                <c:if test="${msg != null}"><%=request.getParameter("msg")%>></c:if>
-                            </div>
+
                             <div class="form-group m-0">
                                 <button type="submit" class="btn btn-primary btn-block">
                                     Register
@@ -108,7 +107,7 @@
                     </div>
                 </div>
                 <div class="footer">
-                    Copyright &copy; 2017 &mdash; Your Company
+                    <p>Copyright &copy; 2018-2018 www.yzstu.cn All Rights Reserved V.1.0.0 豫ICP备19018621号-1</p>
                 </div>
             </div>
         </div>

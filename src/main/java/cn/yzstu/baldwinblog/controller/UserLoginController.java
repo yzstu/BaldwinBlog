@@ -78,6 +78,8 @@ public class UserLoginController {
 
         String userEmail = request.getParameter("email");
 
+        JSONObject retJson = userService.checkEmail(userEmail);
+
         //6位随机验证码
         String emailVerifyCode = RandomUtil.getRandomString(6);
         //发送验证码

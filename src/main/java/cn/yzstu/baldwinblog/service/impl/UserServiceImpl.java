@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
         String email = paramMap.containsKey("email") ? paramMap.get("email") : "nothing";
         String password = paramMap.containsKey("password") ? paramMap.get("password") : "nothing";
 
-        Criteria criteria = new Criteria();
+        criteria.clear();
         criteria.put("email", email);
         ArrayList<User> users = getList(criteria);
         if (users.size() == 0) {
@@ -83,5 +83,21 @@ public class UserServiceImpl implements UserService {
         retJson.put("user", user);
 
         return retJson;
+    }
+
+    @Override
+    public JSONObject checkEmail(String userEmail) {
+        JSONObject retJson = new JSONObject();
+        criteria.clear();
+        criteria.put("email", userEmail);
+        ArrayList<User> users = getList(criteria);
+        if (null != users) {
+            retJson.put("retCode", "304");
+            retJson.put("msg", "用户邮箱已存在，请检查邮箱后重新输入！");
+            retJson.put("viewName", "forward:/login/register.jsp");
+            return retJson;
+        }
+
+        return null;
     }
 }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import static cn.yzstu.common.constants.Constants.SESSION_LOGIN_USER;
+import static cn.yzstu.common.constants.Content.SESSION_LOGIN_USER;
 
 /**
  * \* Created with IntelliJ IDEA.

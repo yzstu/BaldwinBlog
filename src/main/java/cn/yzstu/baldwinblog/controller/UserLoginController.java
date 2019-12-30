@@ -2,7 +2,7 @@ package cn.yzstu.baldwinblog.controller;
 
 import cn.yzstu.baldwinblog.bean.User;
 import cn.yzstu.baldwinblog.service.UserService;
-import cn.yzstu.common.constants.Constants;
+import cn.yzstu.common.constants.Content;
 import cn.yzstu.common.utils.RandomUtil;
 import cn.yzstu.common.utils.RequestUtil;
 import cn.yzstu.common.utils.email.EmailUtil;
@@ -84,7 +84,7 @@ public class UserLoginController {
         String emailVerifyCode = RandomUtil.getRandomString(6);
         //发送验证码
         try {
-            EmailUtil.sendEmail(Constants.EMAIL_VERIFY_CONTANTS_PREFIX + emailVerifyCode + Constants.EMAIL_VERIFY_CONTANTS_SUFFIX, Constants.EMAIL_VERIFY_TITLE, userEmail);
+            EmailUtil.sendEmail(Content.EMAIL_VERIFY_CONTANTS_PREFIX + emailVerifyCode + Content.EMAIL_VERIFY_CONTANTS_SUFFIX, Content.EMAIL_VERIFY_TITLE, userEmail);
         } catch (SendFailedException e) {//捕获错误的邮箱格式或其他原因导致的异常
             request.setAttribute("msg", "发送验证码失败，请检查邮箱格式或稍后重新发送！");
             mv.setViewName("forward:/login/register.jsp");

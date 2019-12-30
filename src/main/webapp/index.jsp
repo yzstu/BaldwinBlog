@@ -31,7 +31,7 @@
 </div>
 <div id="navgation" class="navgation navgation_close">
     <ul class="point">
-        <li><a href="#">首页</a></li>
+        <li><a href="<%=basePath%>index.jsp">首页</a></li>
         <li><a href="<%=basePath%>article.jsp">博客</a></li>
         <li><a href="<%=basePath%>message.jsp">留言</a></li>
     </ul>
@@ -67,7 +67,7 @@
                         <div class="single-news">
                             <div class="news-head">
                                 <img src="<%=basePath%>image/1.jpg">
-                                <a href="#" class="link"><i class="fa fa-link"></i></a>
+                                <a href="<%=basePath%>article.jsp" class="link"><i class="fa fa-link"></i></a>
                             </div>
                             <div class="news-content">
                                 <h4>

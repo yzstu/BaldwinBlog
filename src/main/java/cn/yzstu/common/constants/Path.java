@@ -8,5 +8,5 @@ package cn.yzstu.common.constants;
  * @Other
  */
 public interface Path {
-    String UEDITOR_CONFIG_FILE_PATH = "";
+    String UEDITOR_CONFIG_FILE_PATH = "src/main/resources/";
 }

@@ -14,6 +14,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width"/>
@@ -26,6 +27,29 @@
     <link rel="stylesheet" href="<%=basePath%>css/gloable.css"/>
     <link rel="stylesheet" href="<%=basePath%>css/nprogress.css"/>
     <link rel="stylesheet" href="<%=basePath%>css/message.css"/>
+    <script charset="utf-8" src="/ueditor/ueditor.config.js" type="text/javascript"></script>
+    <script charset="utf-8" src="/ueditor/ueditor.all.min.js" type="text/javascript"></script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        div {
+            width: 100%;
+        }
+    </style>
+
+    <script type="text/javascript">
+        UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;
+        UE.Editor.prototype.getActionUrl = function (action) {
+            if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadimage') {
+                return 'http://localhost:8080/ueditor/ueditor.action';
+                //'http://localhost:8080/imgUpload';为方法imgUpload的访问地址
+            } else {
+                return this._bkGetActionUrl.call(this, action);
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="header">

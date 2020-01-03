@@ -25,4 +25,9 @@ public class ArticleController {
 
         return null;
     }
+
+    @RequestMapping("/show.action")
+    private String showPage() {
+        return "support/ueditor";
+    }
 }

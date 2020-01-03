@@ -3,14 +3,14 @@
 <head>
     <title>chart</title>
     <meta chartset="utf-8">
-    <link rel="stylesheet" type="text/css" href="charts.css">
-    <script type="text/javascript" src="../internal.js"></script>
+    <link href="charts.css" rel="stylesheet" type="text/css">
+    <script src="../internal.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="main">
     <div class="table-view">
         <h3><var id="lang_data_source"></var></h3>
-        <div id="tableContainer" class="table-container"></div>
+        <div class="table-container" id="tableContainer"></div>
         <h3><var id="lang_chart_format"></var></h3>
         <form name="data-form">
             <div class="charts-format">
@@ -18,12 +18,12 @@
                     <legend><var id="lang_data_align"></var></legend>
                     <div class="format-item-container">
                         <label>
-                            <input type="radio" class="format-ctrl not-pie-item" name="charts-format" value="1"
-                                   checked="checked">
+                            <input checked="checked" class="format-ctrl not-pie-item" name="charts-format" type="radio"
+                                   value="1">
                             <var id="lang_chart_align_same"></var>
                         </label>
                         <label>
-                            <input type="radio" class="format-ctrl not-pie-item" name="charts-format" value="-1">
+                            <input class="format-ctrl not-pie-item" name="charts-format" type="radio" value="-1">
                             <var id="lang_chart_align_reverse"></var>
                         </label>
                         <br>
@@ -33,19 +33,19 @@
                     <legend><var id="lang_chart_title"></var></legend>
                     <div class="format-item-container">
                         <label>
-                            <var id="lang_chart_main_title"></var><input type="text" name="title" class="data-item">
+                            <var id="lang_chart_main_title"></var><input class="data-item" name="title" type="text">
                         </label>
                         <label>
-                            <var id="lang_chart_sub_title"></var><input type="text" name="sub-title"
-                                                                        class="data-item not-pie-item">
+                            <var id="lang_chart_sub_title"></var><input class="data-item not-pie-item" name="sub-title"
+                                                                        type="text">
                         </label>
                         <label>
-                            <var id="lang_chart_x_title"></var><input type="text" name="x-title"
-                                                                      class="data-item not-pie-item">
+                            <var id="lang_chart_x_title"></var><input class="data-item not-pie-item" name="x-title"
+                                                                      type="text">
                         </label>
                         <label>
-                            <var id="lang_chart_y_title"></var><input type="text" name="y-title"
-                                                                      class="data-item not-pie-item">
+                            <var id="lang_chart_y_title"></var><input class="data-item not-pie-item" name="y-title"
+                                                                      type="text">
                         </label>
                     </div>
                 </fieldset>
@@ -54,7 +54,7 @@
                     <div class="format-item-container">
                         <label>
                             <var id="lang_cahrt_tip_prefix"></var>
-                            <input type="text" id="tipInput" name="tip" class="data-item" disabled="disabled">
+                            <input class="data-item" disabled="disabled" id="tipInput" name="tip" type="text">
                         </label>
                         <p><var id="lang_cahrt_tip_description"></var></p>
                     </div>
@@ -62,8 +62,8 @@
                 <fieldset>
                     <legend><var id="lang_chart_data_unit"></var></legend>
                     <div class="format-item-container">
-                        <label><var id="lang_chart_data_unit_title"></var><input type="text" name="unit"
-                                                                                 class="data-item"></label>
+                        <label><var id="lang_chart_data_unit_title"></var><input class="data-item" name="unit"
+                                                                                 type="text"></label>
                         <p><var id="lang_chart_data_unit_description"></var></p>
                     </div>
                 </fieldset>
@@ -71,16 +71,16 @@
         </form>
     </div>
     <div class="charts-view">
-        <div id="chartsContainer" class="charts-container"></div>
-        <div id="chartsType" class="charts-type">
+        <div class="charts-container" id="chartsContainer"></div>
+        <div class="charts-type" id="chartsType">
             <h3><var id="lang_chart_type"></var></h3>
             <div class="scroll-view">
                 <div class="scroll-container">
-                    <div id="scrollBed" class="scroll-bed"></div>
+                    <div class="scroll-bed" id="scrollBed"></div>
                 </div>
-                <div id="buttonContainer" class="button-container">
-                    <a href="#" data-title="prev"><var id="lang_prev_btn"></var></a>
-                    <a href="#" data-title="next"><var id="lang_next_btn"></var></a>
+                <div class="button-container" id="buttonContainer">
+                    <a data-title="prev" href="#"><var id="lang_prev_btn"></var></a>
+                    <a data-title="next" href="#"><var id="lang_next_btn"></var></a>
                 </div>
             </div>
         </div>

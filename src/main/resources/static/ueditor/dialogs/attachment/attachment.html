@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>ueditor图片对话框</title>
-    <script type="text/javascript" src="../internal.js"></script>
+    <script src="../internal.js" type="text/javascript"></script>
 
     <!-- jquery -->
-    <script type="text/javascript" src="../../third-party/jquery-1.10.2.min.js"></script>
+    <script src="../../third-party/jquery-1.10.2.min.js" type="text/javascript"></script>
 
     <!-- webuploader -->
     <script src="../../third-party/webuploader/webuploader.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../third-party/webuploader/webuploader.css">
+    <link href="../../third-party/webuploader/webuploader.css" rel="stylesheet" type="text/css">
 
     <!-- attachment dialog -->
-    <link rel="stylesheet" href="attachment.css" type="text/css"/>
+    <link href="attachment.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
 <div class="wrapper">
-    <div id="tabhead" class="tabhead">
+    <div class="tabhead" id="tabhead">
         <span class="tab focus" data-content-id="upload"><var id="lang_tab_upload"></var></span>
         <span class="tab" data-content-id="online"><var id="lang_tab_online"></var></span>
     </div>
-    <div id="tabbody" class="tabbody">
+    <div class="tabbody" id="tabbody">
         <!-- 上传图片 -->
-        <div id="upload" class="panel focus">
-            <div id="queueList" class="queueList">
+        <div class="panel focus" id="upload">
+            <div class="queueList" id="queueList">
                 <div class="statusBar element-invisible">
                     <div class="progress">
                         <span class="text">0%</span>
@@ -37,25 +37,25 @@
                         <div class="uploadBtn"><var id="lang_start_upload"></var></div>
                     </div>
                 </div>
-                <div id="dndArea" class="placeholder">
+                <div class="placeholder" id="dndArea">
                     <div class="filePickerContainer">
                         <div id="filePickerReady"></div>
                     </div>
                 </div>
                 <ul class="filelist element-invisible">
-                    <li id="filePickerBlock" class="filePickerBlock"></li>
+                    <li class="filePickerBlock" id="filePickerBlock"></li>
                 </ul>
             </div>
         </div>
 
         <!-- 在线图片 -->
-        <div id="online" class="panel">
+        <div class="panel" id="online">
             <div id="fileList"><var id="lang_imgLoading"></var></div>
         </div>
 
     </div>
 </div>
-<script type="text/javascript" src="attachment.js"></script>
+<script src="attachment.js" type="text/javascript"></script>
 
 </body>
 </html>

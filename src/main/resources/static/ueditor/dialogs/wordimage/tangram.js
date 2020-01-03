@@ -1,11 +1,11 @@
 // Copyright (c) 2009, Baidu Inc. All rights reserved.
-//
+// 
 // Licensed under the BSD License
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-//
+// 
 //      http:// tangram.baidu.com/license.html
-//
+// 
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS-IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -1238,7 +1238,7 @@ baidu.sio.log = function (url) {
 /*
  * Tangram
  * Copyright 2009 Baidu Inc. All rights reserved.
- *
+ * 
  * path: baidu/json.js
  * author: erik
  * version: 1.1.0
@@ -1254,7 +1254,7 @@ baidu.json = baidu.json || {};
 /*
  * Tangram
  * Copyright 2009 Baidu Inc. All rights reserved.
- *
+ * 
  * path: baidu/json/parse.js
  * author: erik, berg
  * version: 1.2
@@ -1282,7 +1282,7 @@ baidu.json.parse = function (data) {
 /*
  * Tangram
  * Copyright 2009 Baidu Inc. All rights reserved.
- *
+ * 
  * path: baidu/json/decode.js
  * author: erik, cat
  * version: 1.3.4
@@ -1305,7 +1305,7 @@ baidu.json.decode = baidu.json.parse;
 /*
  * Tangram
  * Copyright 2009 Baidu Inc. All rights reserved.
- *
+ * 
  * path: baidu/json/stringify.js
  * author: erik
  * version: 1.1.0
@@ -1466,7 +1466,7 @@ baidu.json.stringify = (function () {
 /*
  * Tangram
  * Copyright 2009 Baidu Inc. All rights reserved.
- *
+ * 
  * path: baidu/json/encode.js
  * author: erik, cat
  * version: 1.3.4

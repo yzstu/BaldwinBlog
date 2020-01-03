@@ -629,7 +629,7 @@
         return ret;
     });/*
  * The AreaRangeSeries class
- *
+ * 
  */
 
     /**

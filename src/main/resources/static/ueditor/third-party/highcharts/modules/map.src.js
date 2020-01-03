@@ -6,7 +6,7 @@
  * License: www.highcharts.com/license
  */
 
-/*
+/* 
  * See www.highcharts.com/studies/world-map.htm for use case.
  *
  * To do:

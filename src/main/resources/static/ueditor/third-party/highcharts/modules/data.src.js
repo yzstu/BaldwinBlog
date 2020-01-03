@@ -9,7 +9,7 @@
 
 /*
  * The Highcharts Data plugin is a utility to ease parsing of input sources like
- * CSV, HTML tables or grid views into basic configuration options for use
+ * CSV, HTML tables or grid views into basic configuration options for use 
  * directly in the Highcharts constructor.
  *
  * Demo: http://jsfiddle.net/highcharts/SnLFj/
@@ -23,30 +23,30 @@
  * are interpreted as series. See also the rows option.
  *
  * - complete : Function(chartOptions)
- * The callback that is evaluated when the data is finished loading, optionally from an
+ * The callback that is evaluated when the data is finished loading, optionally from an 
  * external source, and parsed. The first argument passed is a finished chart options
  * object, containing series and an xAxis with categories if applicable. Thise options
  * can be extended with additional options and passed directly to the chart constructor.
  *
  * - csv : String
  * A comma delimited string to be parsed. Related options are startRow, endRow, startColumn
- * and endColumn to delimit what part of the table is used. The lineDelimiter and
+ * and endColumn to delimit what part of the table is used. The lineDelimiter and 
  * itemDelimiter options define the CSV delimiter formats.
- *
+ * 
  * - endColumn : Integer
- * In tabular input data, the first row (indexed by 0) to use. Defaults to the last
+ * In tabular input data, the first row (indexed by 0) to use. Defaults to the last 
  * column containing data.
  *
  * - endRow : Integer
  * In tabular input data, the last row (indexed by 0) to use. Defaults to the last row
  * containing data.
  *
- * - googleSpreadsheetKey : String
+ * - googleSpreadsheetKey : String 
  * A Google Spreadsheet key. See https://developers.google.com/gdata/samples/spreadsheet_sample
  * for general information on GS.
  *
- * - googleSpreadsheetWorksheet : String
- * The Google Spreadsheet worksheet. The available id's can be read from
+ * - googleSpreadsheetWorksheet : String 
+ * The Google Spreadsheet worksheet. The available id's can be read from 
  * https://spreadsheets.google.com/feeds/worksheets/{key}/public/basic
  *
  * - itemDelimiter : String
@@ -67,7 +67,7 @@
  * The same as the columns input option, but defining rows intead of columns.
  *
  * - startColumn : Integer
- * In tabular input data, the first column (indexed by 0) to use.
+ * In tabular input data, the first column (indexed by 0) to use. 
  *
  * - startRow : Integer
  * In tabular input data, the first row (indexed by 0) to use.

@@ -2,75 +2,75 @@
 <html>
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="robots" content="noindex, nofollow"/>
-    <script type="text/javascript" src="../internal.js"></script>
-    <link rel="stylesheet" type="text/css" href="scrawl.css">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="noindex, nofollow" name="robots"/>
+    <script src="../internal.js" type="text/javascript"></script>
+    <link href="scrawl.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="main" id="J_wrap">
     <div class="hot">
         <div class="drawBoard border_style1">
-            <canvas id="J_brushBoard" class="brushBorad" width="360" height="300"></canvas>
-            <div id="J_picBoard" class="picBoard" style="width: 360px;height: 300px"></div>
+            <canvas class="brushBorad" height="300" id="J_brushBoard" width="360"></canvas>
+            <div class="picBoard" id="J_picBoard" style="width: 360px;height: 300px"></div>
         </div>
-        <div id="J_operateBar" class="operateBar">
-            <span id="J_previousStep" class="previousStep">
+        <div class="operateBar" id="J_operateBar">
+            <span class="previousStep" id="J_previousStep">
                 <em class="icon"></em>
                 <em class="text"><var id="lang_input_previousStep"></var></em>
             </span>
-            <span id="J_nextStep" class="nextStep">
+            <span class="nextStep" id="J_nextStep">
                 <em class="icon"></em>
                 <em class="text"><var id="lang_input_nextsStep"></var></em>
             </span>
-            <span id="J_clearBoard" class="clearBoard">
+            <span class="clearBoard" id="J_clearBoard">
                 <em class="icon"></em>
                 <em class="text"><var id="lang_input_clear"></var></em>
             </span>
-            <span id="J_sacleBoard" class="scaleBoard">
+            <span class="scaleBoard" id="J_sacleBoard">
                 <em class="icon"></em>
                 <em class="text"><var id="lang_input_ScalePic"></var></em>
             </span>
         </div>
     </div>
     <div class="drawToolbar border_style1">
-        <div id="J_colorBar" class="colorBar"></div>
-        <div id="J_brushBar" class="sectionBar">
+        <div class="colorBar" id="J_colorBar"></div>
+        <div class="sectionBar" id="J_brushBar">
             <em class="brushIcon"></em>
-            <a href="javascript:void(0)" class="size1">1</a>
-            <a href="javascript:void(0)" class="size2">3</a>
-            <a href="javascript:void(0)" class="size3">5</a>
-            <a href="javascript:void(0)" class="size4">7</a>
+            <a class="size1" href="javascript:void(0)">1</a>
+            <a class="size2" href="javascript:void(0)">3</a>
+            <a class="size3" href="javascript:void(0)">5</a>
+            <a class="size4" href="javascript:void(0)">7</a>
         </div>
-        <div id="J_eraserBar" class="sectionBar">
+        <div class="sectionBar" id="J_eraserBar">
             <em class="eraserIcon"></em>
-            <a href="javascript:void(0)" class="size1">1</a>
-            <a href="javascript:void(0)" class="size2">3</a>
-            <a href="javascript:void(0)" class="size3">5</a>
-            <a href="javascript:void(0)" class="size4">7</a>
+            <a class="size1" href="javascript:void(0)">1</a>
+            <a class="size2" href="javascript:void(0)">3</a>
+            <a class="size3" href="javascript:void(0)">5</a>
+            <a class="size4" href="javascript:void(0)">7</a>
         </div>
         <div class="sectionBar">
-            <div id="J_addImg" class="addImgH">
+            <div class="addImgH" id="J_addImg">
                 <em class="icon"></em>
                 <em class="text"><var id="lang_input_addPic"></var></em>
-                <form method="post" id="fileForm" enctype="multipart/form-data" class="addImgH_form" target="up">
-                    <input type="file" name="upfile" id="J_imgTxt"
-                           accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp"/>
+                <form class="addImgH_form" enctype="multipart/form-data" id="fileForm" method="post" target="up">
+                    <input accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp" id="J_imgTxt" name="upfile"
+                           type="file"/>
                 </form>
                 <iframe name="up" style="display: none"></iframe>
             </div>
         </div>
         <div class="sectionBar">
-            <span id="J_removeImg" class="removeImg">
+            <span class="removeImg" id="J_removeImg">
                 <em class="icon"></em>
                 <em class="text"><var id="lang_input_removePic"></var></em>
             </span>
         </div>
     </div>
 </div>
-<div id="J_maskLayer" class="maskLayerNull"></div>
+<div class="maskLayerNull" id="J_maskLayer"></div>
 
-<script type="text/javascript" src="scrawl.js"></script>
+<script src="scrawl.js" type="text/javascript"></script>
 <script type="text/javascript">
     var settings = {
         drawBrushSize: 3, //画笔初始大小

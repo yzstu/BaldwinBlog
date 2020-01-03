@@ -1,5 +1,6 @@
 package cn.yzstu.support.ueditor;
 
+import cn.yzstu.common.constants.Path;
 import cn.yzstu.support.ueditor.define.ActionMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,7 +16,7 @@ import java.util.Map;
  */
 public final class ConfigManager {
 
-    private static final String configFileName = "config.json";
+    private static final String configFileName = "ueditorConfig.json";
     // 涂鸦上传filename定义
     private final static String SCRAWL_FILE_NAME = "scrawl";
     // 远程图片抓取filename定义
@@ -61,7 +62,6 @@ public final class ConfigManager {
         } catch (Exception e) {
             return null;
         }
-
     }
 
     // 验证配置文件加载是否正确
@@ -165,7 +165,7 @@ public final class ConfigManager {
     }
 
     private String getConfigPath() {
-        return this.parentPath + File.separator + ConfigManager.configFileName;
+        return Path.UEDITOR_CONFIG_FILE_PATH + ConfigManager.configFileName;
     }
 
     private String[] getArray(String key) {

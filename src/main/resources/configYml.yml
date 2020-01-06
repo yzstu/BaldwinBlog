@@ -1,0 +1,4 @@
+ue:
+  config-file: ueditorConfig.json
+  server-url: /ueditor/ueditor.action
+  url-prefix: /file
